@@ -1,0 +1,58 @@
+.openart-loading {
+  &-circle {
+    position: relative;
+    & &-progress {
+      &-1 {
+        transition: 0.35s stroke-dashoffset;
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+        stroke: url(#openart-loading-gradient);
+        stroke-linecap: round;
+      }
+      &-2 {
+        stroke: var(--color-input-background);
+      }
+      & defs {
+        & stop:first-child {
+          stop-color: var(--gradient-accent-dark);
+        }
+        & stop:last-child {
+          stop-color: var(--gradient-accent-light);
+        }
+      }
+    }
+    & &-status {
+      position: absolute;
+      .openart-link-mobile-large {
+        margin-right: 10px;
+      }
+    }
+  }
+  &-line {
+    & &-progress {
+      height: 12px;
+      width: 100%;
+      position: relative;
+      border-radius: 6px;
+      background: var(--color-input-background);
+      margin-bottom: 10px;
+      &::after {
+        content: "";
+        height: 100%;
+        width: var(--data-progress);
+        position: absolute;
+        left: 0px;
+        border-radius: 6px;
+        background: var(--gradient-accent);
+      }
+    }
+    &-status {
+      .openart-link-mobile-large {
+        margin-right: 10px;
+      }
+      .openart-text-mobile-medium {
+        color: var(--color-placeholder);
+      }
+    }
+  }
+}

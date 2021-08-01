@@ -1,0 +1,54 @@
+.openart-toggle {
+  display: flex;
+  outline: none;
+  background: none;
+  border: none;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  border-radius: 40px;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  &:focus {
+    box-shadow: 0 0 0 3px var(--color-line);
+  }
+  &-input {
+    display: none;
+  }
+
+  &-input:checked + &-switch {
+    background: var(--gradient-accent);
+    &:hover {
+      background: var(--primary);
+    }
+    &::before {
+      transform: translateX(93%);
+    }
+  }
+
+  &-switch {
+    height: 36px;
+    width: 64px;
+    background: var(--color-placeholder);
+    border-radius: 40px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    &:hover {
+      background: var(--color-label);
+    }
+    &::before {
+      background: #fff;
+      content: "";
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      border-radius: 30px;
+      margin: 0px 3px;
+      transform: translateX(0%);
+      transition: all 100ms;
+    }
+  }
+}

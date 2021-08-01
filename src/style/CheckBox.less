@@ -1,0 +1,65 @@
+.openart-checkbox {
+  padding: 0px;
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  display: flex;
+  & > * {
+    border-radius: 4px;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+  &-input:checked + &-check {
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    &:hover {
+      background: var(--primary-dark);
+    }
+    &::after {
+      display: block;
+    }
+  }
+  &-input:disabled:checked + &-check {
+    background: var(--color-line);
+    border-color: var(--color-line);
+  }
+  &-input {
+    display: none;
+  }
+  &-round &-check {
+    border-radius: 24px;
+  }
+  &-round {
+    border-radius: 24px;
+    &:focus {
+      box-shadow: 0 0 0 3px var(--color-line);
+    }
+  }
+  &-check {
+    height: 24px;
+    width: 24px;
+    background: var(--color-off-white);
+    border: 1px solid;
+    border-color: var(--color-placeholder);
+    position: relative;
+    transition: all 100ms;
+    &:hover {
+      border-color: var(--primary-dark);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      bottom: 7px;
+    }
+  }
+}

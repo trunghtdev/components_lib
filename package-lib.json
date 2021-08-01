@@ -1,0 +1,15 @@
+{
+  "name": "storybook_2",
+  "version": "1.0.0",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "types": "./esm/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "/lib"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}

@@ -1,0 +1,32 @@
+.openart-avatar {
+  display: flex;
+  height: 3rem;
+  &-img {
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    & img {
+      border-radius: 3rem;
+    }
+    & span {
+      height: 0.75rem;
+      width: 0.75rem;
+      border: 1px solid white;
+      border-radius: 0.75rem;
+      position: absolute;
+      right: 0px;
+      background-color: var(--success);
+    }
+  }
+  &-text {
+    display: flex;
+    margin-left: 10px;
+    & > .openart-text-desktop-x-small {
+      color: var(--color-placeholder);
+      line-height: 18px;
+    }
+    & > span {
+      line-height: unset;
+    }
+  }
+}

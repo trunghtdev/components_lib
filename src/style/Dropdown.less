@@ -1,0 +1,47 @@
+.openart-dropdown {
+  position: relative;
+  width: max-content;
+  border-radius: 8px;
+  &-btn {
+    outline: none;
+    border: none;
+    padding: 0px;
+    height: 45px;
+    min-width: 342px;
+    background: var(--color-input-background);
+    border-radius: 8px;
+    padding: 0px 20px;
+    &:disabled {
+      opacity: 0.5 ;
+    }
+    
+    &:focus {
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+    
+    &-icon {
+
+    }
+  }
+  &-list {
+    position: absolute;
+    display: none;
+    background-color: var(--color-input-background);
+    margin: 0px;
+    z-index: 1;
+    width: 100%;
+    padding: 0px;
+    border-radius: 8px;
+    top: calc(100% + 5px);
+    list-style: none;
+  }
+  &-show {
+    display: block;
+  }
+  &-item {
+    opacity: 0.5;
+    &-selected {
+      opacity: 1;
+    }
+  }
+}

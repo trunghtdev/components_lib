@@ -1,0 +1,105 @@
+.openart-btn {
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  & .openart-btn-loading-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    & > svg {
+      animation-name: rotate;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+  & svg,
+  & span,
+  & p {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &-small {
+    height: 40px;
+    padding: 8px 27.5px 7px;
+    font-size: 1rem;
+  }
+
+  &-large {
+    height: 56px;
+    padding: 15px 37.5px 13px;
+    font-size: 1.25rem;
+  }
+
+  &.openart-btn-loading {
+    box-shadow: 0 0 0 3px var(--color-line);
+  }
+  
+  & .openart-btn-loading-content,
+  &-primary {
+    & > span {
+    color: var(--color-off-white);
+    }
+  }
+
+  &-primary {
+    background: var(--gradient-accent);
+    &:focus {
+      box-shadow: 0 0 0 2px var(--color-line);
+    }
+  }
+  
+  &-secondary {
+    position: relative;
+    &::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      border-radius: 8px; 
+      padding: 1px; 
+      background: var(--gradient-accent); 
+      -webkit-mask: 
+         linear-gradient(#fff 0 0) content-box, 
+         linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out; 
+      mask-composite: exclude; 
+    }
+    
+  }
+  &-ghost,
+  &-subtle,
+  &-secondary {
+    background: var(--color-off-white);
+    &.openart-btn-loading,
+    &:focus {
+      box-shadow: none;
+      background-color: var(--color-input-background);
+    }
+    & > span {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &-subtle {
+    border: 1px solid var(--color-placeholder);
+  }
+}
+
+@keyframes rotate{
+  from { transform: rotate(-360deg); }
+  to { transform: rotate(360deg); }
+}
