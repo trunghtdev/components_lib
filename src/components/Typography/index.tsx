@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 export type TypographyProps = {
   device?: 'mobile' | 'desktop',
@@ -7,7 +7,7 @@ export type TypographyProps = {
   text?: string
 }
 
-const Typography = memo<TypographyProps>((props) => {
+const Typography = (props: TypographyProps) => {
   const { type = 'regular', size = 'medium', device = 'desktop', text } = props
   return (
     <span
@@ -16,6 +16,6 @@ const Typography = memo<TypographyProps>((props) => {
       {text}
     </span>
   )
-})
+}
 
-export default Typography
+export { Typography }

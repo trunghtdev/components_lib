@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { useState } from 'react'
 import ArrowDownIcon from '../../icons/ArrowDown'
 
 import { Text } from '../Text'
@@ -11,7 +11,7 @@ export type DropdownProps = {
   prefixKey: string
 }
 
-const Dropdown = memo<DropdownProps>((props) => {
+const Dropdown = (props: DropdownProps) => {
   const { dataSource = [], renderItem, prefix, prefixKey, disabled } = props
   const [selectedItem, setSelectedItem] =useState<any>(
     dataSource.length > 0 ? dataSource[0] : {}
@@ -56,6 +56,6 @@ const Dropdown = memo<DropdownProps>((props) => {
       </ul>
     </div>
   )
-})
+}
 
 export { Dropdown }

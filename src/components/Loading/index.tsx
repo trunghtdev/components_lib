@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 
 import { Text } from '../Text'
 
@@ -7,18 +7,31 @@ export type LoadingProps = {
   type?: 'circle' | 'line'
 }
 
-const Loading = memo<LoadingProps>((props) => {
+const Loading = (props: LoadingProps) => {
   const refCircle = useRef<SVGCircleElement>(null)
   const { type = 'line', progress = 0 } = props
+  
+  const progressConverted = useMemo(() => {
+    if (progress < 0) {
+      return 0;
+    }
+    if (progress > 100) {
+      return 100;
+    }
+    return progress
+  }, [progress])
 
   useEffect(() => {
+    if (!(type === 'circle') || !refCircle.current) {
+      return;
+    }
     if (type === 'circle' && refCircle.current) {
       const radius = refCircle.current?.r?.baseVal?.value || 0;
       const circumference = radius * 2 * Math.PI;
       refCircle.current.style.strokeDasharray = `${circumference} ${circumference}`
-      refCircle.current.style.strokeDashoffset = `${circumference - progress / 100 * circumference}`
+      refCircle.current.style.strokeDashoffset = `${circumference - progressConverted / 100 * circumference}`
     }
-  }, [type])
+  }, [type, progressConverted])
 
   return (
     <div
@@ -27,7 +40,7 @@ const Loading = memo<LoadingProps>((props) => {
       {type === 'line' 
         ? (
           <span 
-            style={{ ['--data-progress' as never]: `${progress}%` }} 
+            style={{ ['--data-progress' as never]: `${progressConverted}%` }} 
             className={`openart-loading-${type}-progress`}
           />
         ) 
@@ -66,11 +79,11 @@ const Loading = memo<LoadingProps>((props) => {
       <div
         className={`openart-loading-${type}-status flex-row-left-center`}
       >
-        <Text type='link' size='large' device='mobile' text={`${progress}%`} />        
+        <Text type='link' size='large' device='mobile' text={`${progressConverted}%`} />        
         <Text size='medium' device='mobile' text='Done' />
       </div>
     </div>
   )
-})
+}
 
 export { Loading }

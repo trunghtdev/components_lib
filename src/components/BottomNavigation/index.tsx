@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { useState } from 'react'
 
 import { Text } from '../Text'
 
@@ -14,7 +14,7 @@ export type BottomNavigationProps = {
 }
 
 
-const BottomNavigation = memo<BottomNavigationProps>((props) => {
+const BottomNavigation = (props: BottomNavigationProps) => {
   const { items = [], initialValue = "" } = props
   const [selectedItem, setSelectedItem] = useState<string>(initialValue)
   const Icon = ({ icon }: { icon: string | JSX.Element }) => {
@@ -54,6 +54,6 @@ const BottomNavigation = memo<BottomNavigationProps>((props) => {
       })}
     </ul>
   )
-})
+}
 
 export { BottomNavigation } 

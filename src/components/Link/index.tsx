@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 export type LinkProps = {
   icon?: JSX.Element | string,
@@ -6,10 +6,11 @@ export type LinkProps = {
   disabled?: boolean
 }
 
-const Link = memo<
+const Link = (
+  { icon, text, disabled, children, ...props }:
   LinkProps&
   React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
->(({ icon, text, disabled, children, ...props }) => {
+) => {
   
   const Icon = () => {
     if (typeof icon === 'string') {
@@ -36,6 +37,6 @@ const Link = memo<
       )}
     </a>
   )
-})
+}
 
 export { Link }

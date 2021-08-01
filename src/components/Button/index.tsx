@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import { Text } from '../Text'
 import LoadingIcon from '../../icons/Loading';
@@ -12,7 +12,7 @@ export type ButtonProps = {
   size?: "small" | 'large'
 }
 
-const Button = memo<ButtonProps>((props: ButtonProps) => {
+const Button = (props: ButtonProps) => {
   const { loading, disabled, type = 'primary', size = 'small', text } = props;
   
   return (
@@ -43,6 +43,6 @@ const Button = memo<ButtonProps>((props: ButtonProps) => {
         )}
     </button>
   );
-});
+};
 
 export { Button };

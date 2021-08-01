@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 import { Text } from '../Text'
 
@@ -7,7 +7,7 @@ export type TagProps = {
   type?: 'primary' | 'warning' | 'success' | 'error'
 }
 
-const Tag = memo<TagProps>((props) => {
+const Tag = (props: TagProps) => {
   const { text, type='primary' } = props
   return (
     <div
@@ -16,6 +16,6 @@ const Tag = memo<TagProps>((props) => {
       <Text type='link' text={text} size='small' device='desktop' />
     </div>
   )
-})
+}
 
 export { Tag }

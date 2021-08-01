@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React from 'react'
 
 export type TextProps = {
   text?: string,
@@ -7,7 +7,7 @@ export type TextProps = {
   size?: 'large' | 'medium' | 'small' | 'x-small'
 }
 
-const Text = memo<TextProps>((props) => {
+const Text = (props: TextProps) => {
   const { text, device = 'desktop', size = 'small', type = 'text' } = props
   return (
     <span
@@ -16,6 +16,6 @@ const Text = memo<TextProps>((props) => {
       {text}
     </span>
   )
-})
+}
 
 export { Text }

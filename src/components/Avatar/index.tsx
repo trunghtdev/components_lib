@@ -1,4 +1,4 @@
-import React, { memo, ImgHTMLAttributes } from 'react'
+import React, { ImgHTMLAttributes } from 'react'
 
 import { Text } from '../Text'
 
@@ -8,7 +8,7 @@ export type AvatarProps = {
   image?: ImgHTMLAttributes<HTMLElement>
 }
 
-const Avatar = memo<AvatarProps>((props) => {
+const Avatar = (props: AvatarProps) => {
   const { name, image, status } = props
   return (
     <div
@@ -30,6 +30,6 @@ const Avatar = memo<AvatarProps>((props) => {
       </div>
     </div>
   )
-})
+}
 
 export { Avatar }

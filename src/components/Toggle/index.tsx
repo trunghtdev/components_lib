@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { useState } from 'react'
 
 export type ToggleProps = {
   disabled?: boolean,
@@ -6,7 +6,7 @@ export type ToggleProps = {
   onChange?: (params?: boolean) => any
 }
 
-const Toggle = memo<ToggleProps>((props) => {
+const Toggle = (props: ToggleProps) => {
   const { initialValue = false, disabled, onChange } = props
   const [active, setActive] = useState<boolean>(initialValue)
   const handleChange = () => {
@@ -31,6 +31,6 @@ const Toggle = memo<ToggleProps>((props) => {
       <span className='openart-toggle-switch' />
     </button>
   )
-})
+}
 
 export { Toggle }

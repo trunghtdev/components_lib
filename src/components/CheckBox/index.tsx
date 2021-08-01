@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { useState } from 'react'
 
 export type CheckBoxProps = {
   disabled?: boolean,
@@ -6,7 +6,7 @@ export type CheckBoxProps = {
   type?: 'round' | 'default'
 }
 
-const CheckBox = memo<CheckBoxProps>((props) => {
+const CheckBox = (props: CheckBoxProps) => {
   const { disabled, initialValue = false, type } = props
   const [checked, setChecked] = useState<boolean>(initialValue)
   const handleClick = () => {
@@ -29,6 +29,6 @@ const CheckBox = memo<CheckBoxProps>((props) => {
       />
     </button>
   )
-})
+}
 
 export { CheckBox }
