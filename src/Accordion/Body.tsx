@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { AccordionContext, AccordionContextType } from '../context/Accordion'
+import React from 'react'
 
 export type BodyProps = {
   children?: JSX.Element | string
@@ -7,10 +6,9 @@ export type BodyProps = {
 
 const Body = (props: BodyProps) => {
   const { children } = props
-  const  { show } = useContext<AccordionContextType>(AccordionContext)
   return (
     <div
-      className={`opanart-accordion-body${show ? ' show' : ''}`}
+      className='opanart-accordion-body'
     >
       <div
         className='opanart-accordion-content'

@@ -1,18 +1,38 @@
 .opanart-accordion {
-  padding: 18px 25px;
-  background: var(--color-background);
+  padding: 0px 25px 0px 25px;
   border-radius: 8px;
+  background: var(--color-background);
 
   &-body {
-    margin-top: 18px;
+    margin-bottom: 18px;
   }
   &-header {
     outline: none;
     border: none;
     background: none;
+    height: 60px;
   }
 
-  &:focus {
+  &.disabled {
+    background: var(--color-off-white);
+    & * {
+      color: var(--color-placeholder);
+    }
+  }
+
+  &-icon {
+    path {
+      stroke: var(--color-title-active);
+    }
+  }
+  
+  &.disabled &-icon {
+    path {
+      stroke: var(--color-placeholder);
+    }
+  }
+
+  &:focus-within:not(.disabled) {
     border: 1px solid var(--primary);
   }
 
@@ -21,7 +41,16 @@
     display: block;
   }
 
-  &-body:not(.show) {
+  &-icon {
+    transform: rotate(0deg);
+    transition: transform 0.15s linear;
+  }
+
+  &.show &-header &-icon {
+    transform: rotate(90deg);
+  }
+
+  &:not(.show) &-body {
     display: none;
     height: auto;
     width: auto;

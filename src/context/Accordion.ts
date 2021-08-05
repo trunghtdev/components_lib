@@ -1,7 +1,8 @@
 import { createContext } from 'react'
 
 export type AccordionContextType = {
-  show?: boolean
+  show?: boolean,
+  disabled?: boolean
 }
 
 export const AccordionContext = createContext<AccordionContextType>({

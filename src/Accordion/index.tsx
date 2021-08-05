@@ -1,34 +1,35 @@
-import React, { ReactNode, useCallback, useRef, useState } from 'react'
+import React, { ReactNode, useCallback, useState } from 'react'
 import Body from './Body'
 import Header from './Header'
 import { AccordionContext } from '../context/Accordion'
 
 export type AccordionProps = {
-  children?: ReactNode
+  children?: ReactNode,
+  disabled?: boolean
 }
 
-const Accordion = (props: any) => {
-  const ref = useRef<HTMLDivElement>(null)
+const Accordion = (props: AccordionProps) => {
   const [show, setShow] = useState<boolean>(false)
-  const { children } = props
+  const { children, disabled } = props
   
   const toggle = useCallback(() => {
-    ref.current?.focus()
-    setShow(p => !p)
-  }, [])
+    if (!disabled){
+      setShow(p => !p)
+    }
+  }, [disabled])
 
   return (
     <AccordionContext.Provider
       value={{
-        show
+        show,
+        disabled
       }}
     >
       <div
-        ref={ref}
         tabIndex={0}
-        className='opanart-accordion flex-column'
+        className={`opanart-accordion flex-column${disabled ? ' disabled' : ''}${show ? ' show' : ''}`}
       >
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, (child: JSX.Element) => {
           if (child) {
             switch (child.type.displayName) {
               case 'Body':
