@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { BottomNavigation } from '../components/BottomNavigation'
+import { BottomNavigation } from '../src/BottomNavigation'
 import BookmarkIcon from './assets/bottomNavigation/bookmark'
 import CameraIcon from './assets/bottomNavigation/camera'
 import CellPhoneIcon from './assets/bottomNavigation/cellphone'

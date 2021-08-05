@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Dropdown } from '../components/Dropdown'
-import { Text } from '../components/Text'
+import { Dropdown } from '../src/Dropdown'
+import { Text } from '../src/Text'
 
 //👇 This default export determines where your story goes in the story list
 export default {

@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs && yarn build:less && yarn build:copy",
-    "build:less": "lessc src/style/index.less lib/style/index.css",
+    "build:less": "lessc style/index.less lib/dist/style/index.css",
     "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build:cjs": "tsc --module commonjs --outDir lib/dist/cjs",
     "build:copy": "cpy package-lib.json lib --rename=package.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"

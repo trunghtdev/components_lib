@@ -1,4 +1,5 @@
-import '!style-loader!css-loader!less-loader!../src/style/index.less'
+import '!style-loader!css-loader!less-loader!../style/index.less'
+import '!style-loader!css-loader!less-loader!../style/stories.less'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

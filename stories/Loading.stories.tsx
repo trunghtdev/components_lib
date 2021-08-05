@@ -1,18 +1,18 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from '../components/Button'
+import { Loading } from '../src/Loading'
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: 'Example/Button',
-  component: Button,
-} as ComponentMeta<typeof Button>;;
+  title: 'Example/Loading',
+  component: Loading,
+} as ComponentMeta<typeof Loading>;;
 
 //👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Loading> = (args) => <Loading {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  text: "Button"
+  progress: 50
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Text } from '../Text'
-import LoadingIcon from '../../icons/Loading';
-import LoadingGhostIcon from '../../icons/LoadingGhost';
+import LoadingIcon from '../Icons/Loading';
+import LoadingGhostIcon from '../Icons/LoadingGhost';
 
 export type ButtonProps = {
   loading?: boolean,

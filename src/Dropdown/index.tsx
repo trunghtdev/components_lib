@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import ArrowDownIcon from '../../icons/ArrowDown'
+import ArrowDownIcon from '../Icons/ArrowDown'
 
 import { Text } from '../Text'
 
@@ -33,7 +33,7 @@ const Dropdown = (props: DropdownProps) => {
       <button
         disabled={disabled}
         onClick={toggle}
-        className='openart-dropdown-btn flex-row-center-space-between'
+        className='openart-dropdown-btn flex-row-space-between-center'
         type='button'
       >
         <Text text={selectedItem[prefix]} size='medium' />

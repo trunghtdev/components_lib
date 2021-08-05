@@ -1,0 +1,29 @@
+.opanart-accordion {
+  padding: 18px 25px;
+  background: var(--color-background);
+  border-radius: 8px;
+
+  &-body {
+    margin-top: 18px;
+  }
+  &-header {
+    outline: none;
+    border: none;
+    background: none;
+  }
+
+  &:focus {
+    border: 1px solid var(--primary);
+  }
+
+  &-body,
+  &-content {
+    display: block;
+  }
+
+  &-body:not(.show) {
+    display: none;
+    height: auto;
+    width: auto;
+  }
+}
