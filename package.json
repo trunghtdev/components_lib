@@ -8,8 +8,8 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/dist/cjs",
     "build:copy": "cpy package-lib.json lib --rename=package.json",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "start-storybook -p 6006",
+    "build:sb": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
