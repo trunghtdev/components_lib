@@ -58,7 +58,7 @@ const Loading = (props: LoadingProps) => {
             </defs>
             <circle
               className={`openart-loading-${type}-progress-2`}
-              stroke-width="12"
+              strokeWidth="12"
               fill="transparent"
               r="65"
               cx="75"
@@ -67,7 +67,7 @@ const Loading = (props: LoadingProps) => {
             <circle
               className={`openart-loading-${type}-progress-1`}
               ref={refCircle}
-              stroke-width="12"
+              strokeWidth="12"
               fill="transparent"
               r="65"
               cx="75"

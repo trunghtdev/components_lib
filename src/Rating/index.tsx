@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 import StarIcon from '../Icons/Star'
 
 export type RatingProps = {
-  count?: number
+  count?: number,
+  size?: 'small' | 'nomal'
 }
 
 const Rating = (props: RatingProps) => {
   const [selected, setSelected] = useState<number>(-1)
   const [currentHover, setCurrentHover] = useState<number>(-1)
-  const { count = 1 } = props
+  const { count = 1, size = 'nomal' } = props
   
   const handleMouseOver = (index: number) => {
     setCurrentHover(index)
@@ -33,7 +34,7 @@ const Rating = (props: RatingProps) => {
             onClick={() => handleClick(index)}
             onMouseOut={handleMouseOut}
             onMouseOver={() => handleMouseOver(index)} 
-            className={`'openart-rating-star'${index <= currentHover || index <= selected ? ' hover' : ''}`}
+            className={`'openart-rating-star' ${size} ${index <= currentHover || index <= selected ? ' hover' : ''}`}
           />
         )
       })}

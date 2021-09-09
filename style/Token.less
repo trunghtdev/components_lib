@@ -1,0 +1,16 @@
+.openart-token {
+  height: 42px;
+  padding: 0px 20px;
+  background-color: var(--color-input-background);
+  border-radius: 30px;
+  width: fit-content;
+  &.disabled {
+    opacity: 0.5;
+  }
+  &.activated {
+    background: var(--gradient-accent);
+    & span {
+      color: var(--color-off-white);
+    }
+  }
+}
